@@ -1,0 +1,128 @@
+#+STARTUP: hidestars
+#+STARTUP: odd
+
+This project is associated with my craft
+
+* TASKS
+
+*** TODO : Add to version control (or backup at least)
+*** TODO : highlight menus properly
+*** TODO : Add tag suggestions to the articles (for articles on similar topics take a look at : )
+*** TODO : Clean obsolete tags
+*** TODO : add real tags to latest articles
+
+* Content
+
+*** posts
+
+These are random ramblings and wiki articles
+
+***** design-constraint
+
+Design constraint is a limitation which makes some options
+unavalable. While this may seemingly block the design from going
+forward, it can also fuels human creativity and help to find
+surprising ideas.
+
+
+
+In fact, most of the human development was driven by "design constraints"
+of our bodies : inability to fly, inability to survive in harsh
+climates or travel fast.
+
+Likewise, some  constraints in software design might lead to surpising
+discoveries or interesting design choices that would've been missed
+otherwise.
+
+Design constraints can be:
+
+ - technical
+ - political
+ - psychological
+ - created
+  
+TODO: expand on these topics
+
+Design constraints on their own are useless without a design process
+to which they can be applied.
+
+
+***** golang
+
+ A language summary about golang 
+
+
+*** event-sourcing
+
+*** micro-services :SECTION:
+
+Micro-services are a set of [design
+constraints][/post/design-constraint] (subjective rules) which are
+believed to shape evolution of a software product in a certain way:
+
+ - application that is composed from heterogenius services
+ - these services are designed to work together in order to deliver
+   some business functionality. 
+
+The concept of micro-services became popular in 2013-2014 through the works of ...
+
+
+
+
+
+
+***** TODO: fill in the works
+
+Micro-services, as a design constraint, are pretty much useless in a
+project without a design process to shape and direct.
+
+***** vs Service-Oriented Architecture
+
+One might say that micro-services are _SOA done right_ with the
+properly-sized services. 
+
+This would be correct. However SOA has been associated with enterprise
+development for a long period of time, while micro-services originated
+in lean development teams. These two worlds tend to be viewed as
+having really different values and mindsets.
+
+> SOA can mean many things, both good (service-orientation,
+decomposition) and ugly (WS-*, ESB misuse). Micro-services refine that. 
+
+***** vs Domain-Driven Design
+
+Domain-Driven Design is a vocabulary and a set of methodologies that
+aid in capturing domain knowledge in working software and evolving
+both. 
+
+Micro-services don't have anything of these, they are merely
+constraints that are created and accepted by the team. You still need
+some sort of design process to move forward.
+
+
+
+
+
+
+***** micro-services/lokad-2013/                                      :STORY:
+
+In Lokad 2014
+
+* Bash shortcuts
+
+** 404 pages
+
+get logs : aws s3 sync s3://abdullin.com-logs logs
+by log :  cat logs/logs/* | grep 'NoSuchKey' | awk '{print $9}' | sort | uniq -c | sort
+
+most missed : cat logs/logs/* | grep 'NoSuchKey' | awk '{print $9}' | sort | uniq -c | sort -n | tac | head -n20
+
+* Hugo notes
+*** Links
+    
+
+      - Karl seguin : http://openmymind.net/Back-To-Basics-Hashtables/
+      - hugo link : http://hugo.spf13.com/overview/configuration
+      - Hugo sample 1 : https://github.com/alexandre-normand/alexandre-normand/tree/master/layouts/_default
+      - Hugo sample 2 https://github.com/kjhealy/kieranhealy.hugo/blob/master/layouts/indexes/category.html
+      - Kickstarter colors : http://www.colourlovers.com/web/trends/websites/7853/KICKSTARTER

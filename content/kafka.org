@@ -1,0 +1,56 @@
+
+* References
+
+** [2015-01-16 Fri] Conversation with Tomas
+
+
+Tomas Roos: Yeah i've talked a bit with him. In the end the work that
+needs to put in instead of just using Kafka is so enormous. Solving ha
+etcd, single writer, doing the partitioning, topic stuff, and then
+work dividation on consuming, ha on consumers
+
+Tomas Roos: It all becomes on of the hardest infrastructure projects
+in the world i believe
+
+Tomas Roos: And in the end a much worse version then kafka
+
+Tomas Roos: The problem with kafka is that their protocol stinks for
+everything else than JVM, but it seems they are releasing a new wire
+protocol to improve this during 2015.
+
+
+Tomas Roos:
+https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Client+Re-Design
+
+Tomas Roos: We'll see if they ever reach that :)
+
+Tomas Roos: But it makes sense because each consumer currently is part
+of the Zookeeper interaction
+
+Tomas Roos: And that should ofc be constrainted as much as possible to
+only the brokers / servers
+
+Tomas Roos: And then the consumers is just getting info from the
+brokers. That seemed like the plan when i read about it in december
+
+Tomas Roos:
+https://cwiki.apache.org/confluence/display/KAFKA/Idempotent+Producer
+
+Tomas Roos: Thats a interesting challenge they have as well
+
+Tomas Roos: Making sure never duplicated messages are inserted if they
+already got inserted :)
+
+Tomas Roos: The cool thing is though if you can have a single writer
+and build something on top of FDB like the global event stream you
+remember.
+
+Tomas Roos: And that is forever good enough for one
+
+Tomas Roos: And failover of consumers or consuming multiple times same
+messages is not a problem
+
+Tomas Roos: You can get a very easy event log with good HA since of
+the replication factor of FDB
+
+Tomas Roos: But thats probably to feature less for most shops

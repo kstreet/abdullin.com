@@ -1,0 +1,11 @@
+= Event Storming
+Rinat Abdullin
+2014-11-30
+:tags: event-driven,domain-event
+
+== References
+
+
+1. link:https://plus.google.com/communities/113258571348605620818[Event Storming Community]
+2. link:http://ziobrando.blogspot.be/2013/11/introducing-event-storming.html#.VGMLQod_288[Introducing Event Storming]
+3. link:http://ziobrando.blogspot.be/2014/05/eventstorming-invite-right-people.html#.VGMLPYd_288[EventStorming: invite the right people]

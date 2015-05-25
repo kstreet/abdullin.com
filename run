@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo Rebuild $(date +%H\:%M\:%S)
+# build all go files
+cd content
+go build ./...
+cd ..
+
+
+
+node --throw-deprecation main.js --serve

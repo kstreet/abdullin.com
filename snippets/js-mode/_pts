@@ -1,0 +1,1 @@
+site: React.PropTypes.instanceOf(Site).isRequired$0

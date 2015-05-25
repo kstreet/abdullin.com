@@ -1,0 +1,105 @@
+---
+title: Domain Event
+idea: Domain-event is a useful model of something that happened in the past.
+date: 2014-12-03
+tags:
+- design
+- event-driven
+- domain event
+form: essay
+draft: true
+---
+
+// gist: introduce notion of an event
+
+An event is something that happens, might happen or already happened
+in the past.
+
+We are rather good with observing events and talking about them. In
+fact, we deal with them without even noticing that on a conscious
+level. On mornings we start our work day by reading a newspaper
+(record of recent events), checking up on a social network (with news
+from our friends, messages sent to us or other social events). During
+the lunch breaks we might discuss recent events in politics, sports
+and business. We can always mention weather that we observed outside.
+
+// TODO: simplify this. Refer to how human mind works well with events
+// and history (short-term vs long-term compression in mind)
+
+
+// gist: show that people agree on events
+
+There is a common pattern in these interactions: we are generally
+quick to agree on the fact that something has happened. After all, it is
+hard to deny the weather or results of the election, when they are
+already observed. We can always argue about causes, effects and
+interpretations of that event, but the fact of the event happening is
+something accepted.
+
+// TODO: need a better transition here. Need feedback
+
+// gist: it is good to start design on something we agree on
+
+It might be a good idea to start design discussions with the events:
+it is easy to capture and agree on them, creating an Ubiquitous
+Language upon which further design will grow.
+
+
+
+// gist: event-storming is a successful example
+> At the end of 2013 [Alberto Brandolini](/bio/alberto-brandolini/)
+> introduced a new workshop format for exploring complex business
+> domains, called [Event Storming](/essay/event-storming/). It is a simple
+> and engaging collaborative process that can quickly capture events and
+> interactions relevant to the business model.
+
+
+// gist: it is important to distinguish different event types
+
+## Event Types
+
+Before we dive deeper into event-driven design, it would be better to
+cover the basics first. First we need, to cover differences between
+different types of events. Distinguishing these reduces possible
+confusion in conversations, making them more productive:
+
+* Real world events,
+* domain events,
+* event contracts,
+* event instances.
+
+
+![Faces of domain event](/images/domain-event__faces.jpg)
+
+
+
+> A domain event is a model representation of something that happened
+> that is interesting to a domain expert - _Eric Evans, Domain
+> Language Newsletter, March 2010 Issue_.
+
+
+// gist: real-world event is an observation of the past
+
+// gist: domain event is a useful abstraction of a real event
+
+// gist: event contract describes how we record observed events
+
+// gist: event instance - record of an event on disk or in memory
+
+
+
+
+
+
+
+
+
+## References
+
+1. [Mathias Verraes, Domain Events](http://verraes.net/2014/11/domain-events/)
+2. [Matthias Verraes, Event Storming](http://verraes.net/2014/07/event-storming-fake-domains-happy-paths/)
+
+// TODO link to Eric Evans
+
+// Discussions:
+// Matthias Verraes: http://verraes.net/2014/11/domain-events/

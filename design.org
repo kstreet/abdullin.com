@@ -1,0 +1,79 @@
+#+STARTUP: hidestars
+#+STARTUP: odd
+
+
+
+Emergent Design patterns
+
+
+
+* Common vocabulary
+
+Most of this vocabulary is aligned with the foundational books by Eric Evans and Vaughn Vernon
+
+*** Domain
+
+  On a larger scale software is a tool to automate some mundane tasks
+  of human life, deal with them faster, better and with less errors.
+
+  Is software engineering, "domain" is usually a part of human life
+  that we try to automate and enhance.
+
+
+  Actual process of a software development in this case becomes :
+  continuous research of the domain that uses iterative development as
+  a tool to capture domain knowledge and refine it.
+
+  Knowledge is the goal here, while working software is merely a
+   byproduct of the process.
+
+*** Domain-Driven Design
+
+Domain-driven design is a methodology that helps
+
+1. Analyse important parts of real life 
+2. Discover important influencing factors (teams, organization boundaries, legacy software)
+3. Capture domain knowledge in a working software
+4. Maintain link between the real world and software while the former changes.
+5. Provide common language
+6. Provide some patterns and tricks that help to tackle complexities in the software design
+
+
+*** Context
+
+*** Domain expert
+
+
+
+*** Bounded Context
+
+*** Ubiquituous Language
+
+*** Context Mapping
+
+Context mapping is a modeling exerise in which we capture
+
+
+
+*** State vs Behavior
+
+* Patterns & Principles
+*** Components and boundaries
+
+*** Value objects
+*** CQRS
+
+*** Event Sourcing
+
+*** Aggregates with event sourcing
+
+*** View Projections
+
+*** Micro-Services
+
+* Technical constrains
+
+*** Availability vs Consistency
+
+
+

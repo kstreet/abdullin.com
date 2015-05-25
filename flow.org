@@ -1,0 +1,40 @@
+* Next
+** Switch to foundation + normalizer
+** Recent posts in home page -> Updates (smaller list on the right)
+** Put populat content prominently on the left
+** Require popular content to have images and use that in popular layout (top 3)
+** Craft tags
+** Fix missing images
+** Introduce series? (explicitly or as a tag)
+
+Serie is a sequential story broken into smaller posts. It could be published as a book
+Tag is a prominent keyword for a search
+** TODO: Add similar posts to the RSS feed
+
+* Done
+** DONE Implement RSS
+** DONE 404 page
+** DONE Copy images
+** DONE add proper favicons
+** TODO Add image to the feed
+** TODO Validate HTML of feeds and articles when publishing
+** DONE Use full image links for feeds
+** DONE Archives (all + tags)
+** TODO Correct HTML layout
+** TODO Calculate summaries (for hugo)
+** Implement nice post list
+** 3 most popular posts on the top
+
+* Structure
+
+** Tags
+
+Tags are keywords for better search
+
+*** Languages
+
+**** C#
+**** Golang
+*** Technologies
+**** Azure
+****

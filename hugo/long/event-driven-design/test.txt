@@ -1,0 +1,27 @@
+
+
+
+
+
+# I want to write a book, again.
+
+Since HappyPancake project completed, I found myself with a bit of
+spare time.
+
+
+
+
+Week 1.
+
+1. asciidoc is a good format, more expressive than markdown
+2. emacs has many things out-of-box: doc-mode, flyspell, goodwriting
+3. reused concept of fast feedback from the happy pancake - live rebuild
+4. golang is a good protyping language, used it for scaffolding
+5. pushed to private bitbucket to give access to reviewers
+6. using asciidoc comments to store metadata rendered to org-mode format
+7. considering to switch to Haskell
+8. Introduced TODOs, spread across the document, summarized to asciidoc outline
+9. Introduced IDEAs - one-line summaries for the block of text. That's my building block
+10. Using evernote to clip references
+
+

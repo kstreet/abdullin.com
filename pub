@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+rm -rf build
+
+
+cd content
+go build ./...
+cd ..
+
+node main.js --prod --save
+aws s3 sync build s3://abdullin.com --delete

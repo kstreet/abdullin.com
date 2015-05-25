@@ -1,0 +1,38 @@
+= Value Object
+Rinat Abdullin
+v1.0, 2014-11-09
+:tags: DDD,patterns
+
+*Value Object* - immutable type with an explicit name composed from
+one or more primitive types. It represents important domain concepts
+as explicit code constructs.
+
+For example, consider a situation, with the following method signature
+and call.
+
+// include example value-object__bad
+
+It is easy for a developer to accidentally mix arguments of the same
+type. In the snippet above we confused `name` with `email`. Such a
+mistake would reveal itself only during debugging or testing.
+
+We can protect ourselves from such mistakes by introducing
+higher-level language constructs which make domain concepts explicit.
+
+// include example value-object__good
+
+Depending on the language, Value Objects can provide benefits of
+static type checking and IDE support.
+
+
+Value Objects could represent following domain concepts:
+
+* Enums
+* Identifiers
+* Constrained types over primitives (names, emails, passwords etc)
+
+
+// TODO: Explain VO applications in detail
+// TODO: Show use of Value objects in message contracts
+
+// include example value-object__samples

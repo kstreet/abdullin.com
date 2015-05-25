@@ -1,0 +1,17 @@
+* Domain-events
+** Real-world
+*** Immutable
+*** Causality
+** Model
+*** Name
+*** Value Objects
+** Contract
+*** Enrichment
+*** Versioning
+*** Identity
+*** Serialization
+*** Namespace
+** Instance
+*** Append-only
+*** Metadata
+    
