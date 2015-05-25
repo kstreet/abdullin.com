@@ -31,14 +31,14 @@ title: DDD - Evolving Business Processes a la Lokad
 
 <p>Let's assume that we are dealing with a distributed system, where information about current state is shared with events. In such case, our business process might resemble a piece from complex event processing and would look this from the logical perspective:</p>
 
-{{% img src="ddd-evolving-business-processes-a-la-lokad/bp-1.jpg" %}} 
+{{% img src="bp-1.jpg" %}} 
 
 <p>How can we implement this "Business Process" box? There are multiple alternatives, depending on the architecture style you have chosen. </p>
 
 <p>For example, you can use a state machine, where each instance of state machine would correspond to a specific process instance that you are tracking. Events would then be used to navigate an instance of the state machine across the nodes. It will also use external timer service to send messages "to future" (where message is put on hold till certain time comes).</p>
 
 
-{{% img src="ddd-evolving-business-processes-a-la-lokad/bp-st.jpg" %}} 
+{{% img src="bp-st.jpg" %}} 
 
 <p>State machines are good for formalized domains. You can learn more about such approaches in the materials provided by Gregory Young and Udi Dahan.</p>
 
@@ -47,14 +47,14 @@ title: DDD - Evolving Business Processes a la Lokad
 <p>What is the most simple solution in case with locking customer balance for overdrafts? For instance, we can project all events to a view, which will <strong>track</strong> all active customers that used our services and went below the threshold at some point. Then our <strong>execution</strong> will be responsible for regularly checking this view and sending "Lockdown" to every customer that had his balance below the threshold for too long.</p>
 
 
-{{% img src="ddd-evolving-business-processes-a-la-lokad/bp-2.jpg" %}} 
+{{% img src="bp-2.jpg" %}} 
 
 <p>This component would also need to keep in mind that certain customers require special handling and investigation before being locked out, while others can be locked right away. Naturally, these rules will be changing really often.</p>
 
 <p>What is the fastest and most flexible way to implement such component in a rapidly growing and changing environment? </p>
 
 
-{{% img src="ddd-evolving-business-processes-a-la-lokad/bp-3.jpg" %}} 
+{{% img src="bp-3.jpg" %}} 
 
 <p>You simply wire view to the UI, attach a button to send "lockdown command" and <strong>ask a person</strong> from the business department to <strong>spend half an hour per week processing all late customers</strong>. This will save dev department hours on implementing these complex execution rules, testing them and then changing (as business discovers new corner cases). Essentially we let the rules evolve and change in the environment that shapes them: in the minds of business managers.</p>
 
