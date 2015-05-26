@@ -1,11 +1,11 @@
 ---
 date: 2014-04-18
-title: "BTW38: Glenn Block Evolves APIs"
+title: "E38 - Glenn Block Evolves APIs"
 tags:
 - API
 - REST
 form: story
-story: gtd
+story: btw
 storyIndex: 20140418
 audio: "/beingtheworst.com/btw-0038_glenn_block_evolves_apis.mp3"
 ---

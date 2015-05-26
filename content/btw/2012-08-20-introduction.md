@@ -2,9 +2,9 @@
 date: 2012-08-20
 title: "Introduction to Being the Worst"
 tags:
-- gtd
+- podcast
 form: story
-story: gtd
+story: btw
 storyIndex: 20120820
 ---
 

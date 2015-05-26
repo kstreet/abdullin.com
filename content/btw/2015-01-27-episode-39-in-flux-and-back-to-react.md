@@ -1,11 +1,11 @@
 ---
 date: 2015-01-27
-title: "BTW39: In Flux and Back to React"
+title: "E39 - In Flux and Back to React"
 tags:
 - event-driven
 - gtd
 form: story
-story: gtd
+story: btw
 storyIndex: 20150127
 audio: "/beingtheworst.com/btw-0039_in_flux_and_back_to_react.mp3"
 ---

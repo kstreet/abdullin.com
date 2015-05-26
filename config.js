@@ -33,10 +33,10 @@ module.exports = function(prod) {
 				title: "HappyPancake",
 				url: "/happypancake/"
 			},
-			"gtd": {
-				description: "Designing and building an event-driven task manager.",
-				title: "GTD Project",
-				url: "/gtd/"
+			"btw": {
+				description: "Being the Worst Podcast - adventures in practical software design with Kerry Street and Rinat Abdullin",
+				title: "BeingTheWorst",
+				url: "/btw/"
 			}
 
 		}

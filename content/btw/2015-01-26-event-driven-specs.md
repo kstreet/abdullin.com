@@ -7,7 +7,7 @@ tags:
 - design
 - ddd
 form: story
-story: gtd
+story: btw
 storyIndex: 20150126
 ---
 
