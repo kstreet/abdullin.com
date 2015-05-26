@@ -12,7 +12,7 @@ var GoogleAnalytics = React.createClass({
 	render: function render() {
 		var site = this.props.site;
 
-		if (site.root !== "http://abdullin.com") {
+		if (site.root !== "https://abdullin.com") {
 			return <p>Google Analytics disabled.<pre>
 {this.props.children}
 </pre></p>;

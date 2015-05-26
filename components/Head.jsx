@@ -26,7 +26,7 @@ var Head = React.createClass({
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				{metas}
 				<title>{ this.props.title }</title>
-				<link href="http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css" />
+				<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Source+Code+Pro|Source+Sans+Pro:200,300,400,600,400italic,600italic|Rock+Salt" rel="stylesheet" type="text/css" />
 				<link rel="stylesheet" type="text/css" href="/css/styles.css" />
 
 				<link rel="apple-touch-icon-precomposed"

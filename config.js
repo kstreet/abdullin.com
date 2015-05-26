@@ -4,7 +4,7 @@
 module.exports = function(prod) {
 
 
-	var root = prod ? "http://abdullin.com" : "http://localhost:3000";
+	var root = prod ? "https://abdullin.com" : "http://localhost:3000";
 	console.log("Building for " + root);
 
 	return {
