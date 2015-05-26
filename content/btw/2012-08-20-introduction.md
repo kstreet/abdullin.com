@@ -16,7 +16,7 @@ mistakes that we were going to make.
 > Years later, we are still pushing, thanks to Kerry and our awesome
 > community.
 
-Later, [BeingTheWorst Podcast](http://beingtheworst.com) turned out to
+Later, the podcast turned out to
 be one of the longest and most successful projects I ever participated
 in. For that I will be gratefull to Kerry forever.
 
@@ -31,8 +31,3 @@ Somewhere along the way we decided to take on the domain of
 > manager for OSX and iOS.
 
 This is the story of that journey.
-
-If you have some spare time, you could start listening to episodes
-from [the beginning](http://beingtheworst.com/episodes-en). Otherwise,
-feel free to [fast forward to year 2015](/gtd/) (we started our latest
-iteration then).

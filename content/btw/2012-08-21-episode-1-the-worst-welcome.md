@@ -7,7 +7,7 @@ story: btw
 storyIndex: "20120821"
 tags:
 - podcast
-title: E01 - The Worst Welcome"
+title: E01 - The Worst Welcome
 ---
 <p>Audio apprenticeships for the aspiring software craftsman.  Kerry and Rinat introduce the show and describe the plan for the road ahead.  They are still figuring out how to produce and host a podcast so feel free to cut them a little slack on any episode quality issues.</p>
 
