@@ -38,7 +38,6 @@ module.exports = function(prod) {
 				title: "BeingTheWorst",
 				url: "/btw/"
 			}
-
 		}
 	};
 };
