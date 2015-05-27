@@ -1,13 +1,13 @@
 ---
 title: Telemetry
-idea: Telemetry gives real-time insight into running software.
+idea: Telemetry provides a real-time insight into running software.
 date: 2015-05-27
 tags:
+- devops
+- analytics
+- linux
 - .NET
 - telemetry
-- devops
-- linux
-- analytics
 form: essay
 ---
 
