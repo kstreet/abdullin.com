@@ -1,0 +1,15 @@
+* Work log
+** Lokad.CQRS blog post
+   :LOGBOOK:
+   CLOCK: [2015-06-16 Tue 22:34]
+   :END:
+
+
+* Ref
+** Org-mode
+
+| Category | Action                  | Key         |
+| Clock    | Insert a table          | C-c C-x C-r |
+| Clock    | Update a table          | idem        |
+| Clock    | Recompute time interval | C-c C-c     |
+|          | Archive a subtree       | C-c C-x C-s |
