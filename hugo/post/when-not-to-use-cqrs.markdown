@@ -11,6 +11,11 @@ title: When NOT to use CQRS?
 ---
 <p>CQRS is an approach to structure, design and deliver a small and focused part of a system. It is a set of patterns and techniques that help to deal with the entire vertical stack of such focused part in a relatively simple way, starting from persistence and up to the continuous UIs. While doing that we can also opt-in for some practical benefits like cloud-capabilities, scaling of development effort and low friction.</p>
 
+
+> I wrote a Lokad.CQRS framework in the past. If you are interested in
+> the painful details, there is a
+> [retrospective of that](/lokad-cqrs-retrospective/).
+
 <p>However, if you don't have your system decoupled into small and focused parts, then don't rush into CQRS right away. Instead of helping you, it is likely to increase complexity without any noticeable benefits. My recommendation is to start by finding clear boundaries along which a problem can be broken into small and manageable pieces. In the old times this <em>divide et impera</em> strategy was practically applied with some success by people like like Caesar and Napoleon.</p>
 
 <p>In my opinion, the best approach to find these boundaries and manage them is called Domain Driven Design (that's the blue book by Eric Evans). CQRS patterns evolved in the world of DDD practitioners and produce the best results when applied to problem space that is explored and explained with DDD methodology. There is simply too much synergy.</p>
@@ -29,4 +34,3 @@ title: When NOT to use CQRS?
 <p>So. <strong>Don't use CQRS in your system, if you have more important things you can do first</strong>. Like breaking it apart into small and focused slices that can be dealt with separately.</p>
 
 <p>Likewise, if you are using CQRS to determine architecture of your entire system (and if the system is complex enough), then you are heading into some problems. CQRS is a tactical implementation detail, don't confuse it with strategy.</p>
-

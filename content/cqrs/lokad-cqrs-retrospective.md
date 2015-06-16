@@ -3,9 +3,11 @@ title: Lokad.CQRS Retrospective
 idea: Lokad.CQRS was a promising framework with a lot of mistakes.
 date: 2015-06-16
 tags:
-- cqrs
+- CQRS
 - .NET
 - design
+- Lokad
+- Story
 form: essay
 ---
 
