@@ -56,3 +56,12 @@ components can then be nested and composed together
 
 
 Library from Facebook with a single magical feature.
+
+
+
+
+# Rules
+
+
+1. Separate visual widgets from logic containers
+2. If a component imports more than 5-7 components, something is wrong
