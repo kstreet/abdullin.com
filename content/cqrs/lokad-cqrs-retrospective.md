@@ -11,11 +11,6 @@ tags:
 form: essay
 ---
 
-
-
-
-
-
 Lokad.CQRS was a framework for building “complex” business
 applications running on Azure. It was born out of very limited
 experience and a desire to have CQRS/ES applications on Windows
@@ -191,7 +186,7 @@ this specific implementation failed badly in production:
   the scalability and HA go out of the window.
 * In-memory cache implementation wasn’t thought through. For example,
   streams were stored in a structure like this
-  ConcurrendDictionary<string, IList<byte[]>>. Any .NET developer
+  `ConcurrentDictionary<string, IList<byte[]>>`. Any .NET developer
   could tell you that storing millions of events here wouldn’t be the
   most memory-efficient approach.
 
@@ -210,7 +205,7 @@ That description should already hint at the problems:
 
 * Change detection logic was smart and hard to reason about. It still
   didn’t catch all changes, forcing developers to change code of some
-  projections by hand, just to trigger a rebuild (adding “ToString()”
+  projections by hand, just to trigger a rebuild (adding `ToString()`
   overload was the most frequent choice).
 
 * The framework “encouraged” building a lot of different views without
