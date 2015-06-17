@@ -1,7 +1,7 @@
 * Work log
 ** Lokad.CQRS blog post
    :LOGBOOK:
-   CLOCK: [2015-06-16 Tue 22:34]
+   CLOCK: [2015-06-16 Tue 22:34]--[2015-06-16 Tue 23:36] =>  1:02
    :END:
 
 
