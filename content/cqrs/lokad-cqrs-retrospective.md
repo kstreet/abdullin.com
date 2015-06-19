@@ -17,7 +17,7 @@ form: essay
 
 
 Lokad.CQRS was a framework for building “complex” business
-applications running on Azure. It was was born out of very limited
+applications running on Azure. It was born out of very limited
 experience and a desire to have CQRS/ES applications on Windows
 Azure. I knew only a few patterns back then and tried to use them to
 solve all possible domain problems.
@@ -397,7 +397,7 @@ Code-wise that can be expressed as:
    is an example of that in
    [omni project](https://github.com/abdullin/omni).
 
-3. Examples of high-level sanity checks that prevent protect code from
+3. Examples of high-level sanity checks that protect code from
    hacks and rash decisions that are easy to catch. These could be run
    locally or on integration server (using code introspection and
    information captured from the use-cases).
