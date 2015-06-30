@@ -34,7 +34,7 @@ Azure: hundreds of messages and views, dozens of aggregate roots.
 > Lokad.CQRS. AgileHarbor delivered SkuVault with it. Many other
 > projects used Lokad.CQRS entirely or reused some parts.
 
-Over the time, I discovered (in a painful way), that this specific
+Over time, I discovered (in a painful way), that this specific
 approach had many limitations:
 
 1. Lokad.CQRS made developers focus on low-level implementation
@@ -57,23 +57,23 @@ building blocks. They provided abstractions for storage, messaging and
 event processing on Windows Azure.
 
 Implementations could also be swapped to use local file system or
-memory, which allowed a faster development or testing (since Windows
+memory, which allowed for faster development or testing (since Windows
 Azure Storage Emulator was horribly slow back then).
 
 Business solutions were to be built out of these building blocks. As
-it turns out, **ability to swap different storage engines was the only
+it turns out, **the ability to swap different storage engines was the only
 good thing** in here. However, even the implementations were very
 limiting and had many flaws.
 
 More than that, the entire premise of developing universal building
 blocks upon which the different implementations were to be built - was
 wrong. We’ll talk about issues with the specifics blocks first, then
-will switch to the problems with the design approach.
+we'll switch to the problems with the design approach.
 
 
 ## Atomic Key-Value Storage
 
-**Atomic key-value storage** allowed to store documents by keys and
+**Atomic key-value storage** allowed you to store documents by keys and
 perform atomic updates on them. It had multiple storage
 implementations: Windows Azure Storage, file system and memory
 storage. These could be swapped in and out via a configuration
@@ -94,11 +94,9 @@ start breaking down:
 1. Azure storage (just like any other storage) has a latency for
    accessing individual blobs. Bulk operations would be slow even with
    async non-blocking operations.
-2. Bulk updates were never atomic with this storage. If something
-   would was to go wrong, the storage would end up in a very
-   inconsistent state.
+2. Bulk updates were never atomic with this storage. If something was to go wrong, the storage would end up in a very inconsistent state.
 3. While trying to read or write blobs in large bulks, Azure storage
-   would start hitting scalability limits and timing out. Some
+   would start hitting scalability limits and time out. Some
    timeouts could be handled by retry policies, turning it into a very
    slow operation (e.g. hours) that might still eventually fail.
 4. As databases increased in size, so did many secondary indexes. Any
@@ -175,7 +173,7 @@ append-only storage and used in-memory cache to load streams by their
 id. Atomic stream updates were also possible (using an in-memory
 locks).
 
-In theory, this allowed to build apps with
+In theory, this allowed for building apps with
 [event-sourced](/post/event-sourcing-why/) aggregates. In practice,
 this specific implementation failed badly in production:
 
@@ -193,7 +191,7 @@ this specific implementation failed badly in production:
 ## View Projection Framework
 
 View Projection Framework in Lokad.CQRS was responsible for replaying
-events from Event Store to rebuild read model (views) and maintain it
+events from Event Store to rebuild read model (views) and keep it
 up-to-date. It used **atomic storage** to persist views and smart logic to
 detect code changes that would require a total replay.
 
@@ -217,15 +215,14 @@ That description should already hint at the problems:
   doomed (unless waiting for a few days is ok for you).
 
 
-> Workaround for RAM starvation on replay in Azure would be to
-> provision a large Worker Role just for the duration of replay
+> A workaround for RAM starvation on replay in Azure would be to
+> provision a large Worker Role just for the duration of the replay
 > process (e.g. 112GB RAM is required sometimes), which isn’t a good
 > thing for many reasons.
 
 ## Code DSL for Message Contracts
 
-Lokad Code DSL was a sister tool, frequently used in the projects,
-based on Lokad.CQRS. It allowed to generate proper message contracts
+Lokad Code DSL was a sister tool, frequently used in projects that were based on Lokad.CQRS. It generated proper message contracts
 on-the-fly out of the compact definition files.
 
 For example, this code:
@@ -266,7 +263,7 @@ Back then I believed that code generation was generally bad, but this
 case was an exception. After all, nothing should stand in the way of a
 developer creating new events.
 
-As it turns out, this case was definitely bad. Lokad.DSL allowed to
+As it turns out, this case was definitely bad. Lokad.DSL allowed you to
 create event and command message definitions really fast, without
 thinking too hard about them. This was very wrong, as I learned later.
 
@@ -274,7 +271,7 @@ Message contracts are one of the most important aspects of the design,
 as part of an API they touch multiple contexts. **Badly designed
 message contract could poison all codebases it touches**.
 
-To make things more difficult, badly designed event contract could
+To make things more difficult, a badly designed event contract could
 mess up an event-sourced system for years.
 
 Another (rather mild) drawback of code DSL was that it made it harder
@@ -282,13 +279,13 @@ to tweak and customize message contracts for very specific scenarios.
 
 These days, instead of relying on any sort of code generation, I
 prefer to take my time and write the entire contract by
-hand. Contracts are very important part of the design, they deserve
+hand. Contracts are a very important part of the design, they deserve
 the attention.
 
 ## One-Way Messaging
 
 Lokad.CQRS also featured a one-way messaging framework, using Azure
-Queues or file system. The implementation grew to be rather robust
+Queues or the file system. The implementation grew to be rather robust
 with features like deduplication, quarantines and retries.
 
 As a part of Lokad.CQRS, that implementation was misused very
@@ -321,7 +318,7 @@ Repeat that many times and you get:
 * codebase, where adding a single feature requires changing half a
   dozen of files or more,
 * chatty implementation which talks to Azure Storage a lot. Any
-  moderate load on a busy day is likely to hit scalability limit,
+  moderate load on a busy day is likely to hit a scalability limit,
   causing timeouts and failures.
 
 These days, I prefer to start by using Remote procedure calls (e.g. by
@@ -331,9 +328,9 @@ communications. These are easy to reason about and easy to use.
 > The entire WWW works with RPC and HTTP API. And that is the most
 > complex and scaled distributed system in the world.
 
-If there is a justified need for a messaging in the project, then I’d
+If there is a justified need for messaging in the project, then I’d
 try to use an existing and time-proven solution instead of rolling my
-out. Apache Kafka and RabbitMQ are among the ones that seem to excel
+own. Apache Kafka and RabbitMQ are among the ones that seem to excel
 at large scales.
 
 As for eventual consistency and versioning, these can be easily solved
@@ -347,7 +344,7 @@ still use** these days. All the other building blocks either have a
 lot of issues with them or aren't that useful. That essentially
 renders the entire Lokad.CQRS useless and plain harmful.
 
-High-level design problem here was in trying to limit an
+The high-level design problem here was in trying to limit an
 implementation to a few known possible choices. It is the same as
 telling people: “I don’t know what you are trying to build, but here
 are tools and materials for that. By the way, be gentle with that
@@ -364,9 +361,9 @@ mind, a reusable LEGO constructor.
 
 These days I'd try to limit the damage I inflict upon the developers
 and avoid writing any widely reusable frameworks. They come with too
-much of a responsibility.
+much responsibility.
 
-At most I'd help to setup design and development process in a single
+At most I'd help to setup a design and development process in a single
 project or a company:
 
 * Align design with tools and solutions that already exist out there.
@@ -388,18 +385,18 @@ Code-wise that can be expressed as:
 
 2. Tooling to write use-cases for these modules in a coherent and
    non-fragile way (event-driven use-cases), verify behavior against
-   the working code and print as human-readable documentation. There
+   the working code, and print them as human-readable documentation. There
    is an example of that in
    [omni project](https://github.com/abdullin/omni).
 
 3. Examples of high-level sanity checks that protect code from
    hacks and rash decisions that are easy to catch. These could be run
-   locally or on integration server (using code introspection and
+   locally or on an integration server (using code introspection and
    information captured from the use-cases).
 
 4. Tooling to render human-readable API documentation with samples out
    of the use-cases, embeddable into the API itself. This is similar
-   to the work we did at HPC project.
+   to the work we did at the [HappyPancake (HPC) project](https://abdullin.com/happypancake/).
 
 5. Make it easy for developers to gather [telemetry](/telemetry) from
    the systems running on dev, qa and production environments on many
@@ -413,16 +410,16 @@ Code-wise that can be expressed as:
    QA environment (with continuous delivery), how to handle production
    upgrades.
 
-7. Provide tooling that would involve managers and QA people in
+7. Provide tooling that would involve managers and QA people in the
    software development process. Expose specifications, real-time
-   behavior and system design to them via: rendering use-cases to
+   behavior, and system design to them via: rendering use-cases to
    human-readable specifications, allowing QA people to define new
    use-cases, providing audit logs from the running system in the same
    language as the use-cases.
 
 8. Infrastructure and guidance to developers for developing client
    applications on various platforms (where this is applicable), train
-   and help to find solutions to their problems.
+   and help them find solutions to their problems.
 
 9. Ideally, provide examples of setup for high-availability
    deployments, using existing solutions from the real-world
